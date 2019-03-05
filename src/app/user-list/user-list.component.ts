@@ -12,13 +12,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
+  @Input() users: string[];
+  toggle: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {
   }
-
-  @Input() users: string[];
-  toggle: boolean = false;
 
   // Toggle a boolean to signal color changes
   toggleColor() {
@@ -30,8 +30,6 @@ export class UserListComponent implements OnInit {
     if (this.toggle) {
       return "pink";
     }
-    else {
-      return "lightgreen";
-    }
+    return "lightgreen";
   }
 }

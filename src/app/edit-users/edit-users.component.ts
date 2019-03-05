@@ -11,15 +11,15 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class EditUsersComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   @Output() addUserEvent = new EventEmitter<string>();
   @Output() removeUserEvent = new EventEmitter<void>();
 
   @Input() name = '';
+  
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   // Send name to dashboard userList and clear input field
   addUser() {

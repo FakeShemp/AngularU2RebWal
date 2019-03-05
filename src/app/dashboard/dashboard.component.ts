@@ -12,14 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  userList: string[];
+
   constructor() {
     this.userList = ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lebsack"]
   }
 
   ngOnInit() {
   }
-
-  userList: string[];
 
   // Add a user name in the first position of list
   getUser($event: string) {
