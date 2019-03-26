@@ -1,4 +1,8 @@
-<p>Please log in</p>
-<input [(ngModel)]="username" (keyup.enter)="authServ.login()">
-<br>
-<button (click)="authServ.login()">Login</button>
+<button *ngIf="checkIfLoggedIn(); else elseBlock" (click)="logout()">Log Out</button>
+
+<ng-template #elseBlock>
+    <p>Please log in</p>
+    <input [(ngModel)]="loggedUser" (keyup.enter)="login()">
+    <br>
+    <button (click)="login()">Login</button>
+</ng-template>

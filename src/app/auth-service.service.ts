@@ -8,25 +8,24 @@ export class AuthServiceService {
 
   loggedUser: string;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+    this.loggedUser = undefined;
+  }
 
   checkIfLoggedIn(): boolean {
-    if (this.loggedUser) {
+    if (localStorage.getItem('user')) {
       return true;
     }
     return false;
   }
 
-  login(): boolean {
-    if(this.checkIfLoggedIn()) {
-      // redirect to logout screen
-      return false;
-    }
-
-    return true;
+  public login(user): void {
+    localStorage.setItem('user', user);
+    this.loggedUser = user;
   }
 
-  logout() {
-    console.log("Logout");
+  public logout(): void {
+    localStorage.clear();
+    this.loggedUser = undefined;
   }
 }

@@ -11,13 +11,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserListItemComponent implements OnInit {
 
+  @Input() user: string;
+  @Input() textColor: string;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  @Input() user: string;
-  @Input() textColor: string;
 
   // Returns a style object of different colors depending on input
   getStyle(): Object {

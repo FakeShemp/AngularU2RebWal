@@ -4,6 +4,7 @@ a communicator and parent for the child components.
 */
 
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -14,11 +15,15 @@ export class DashboardComponent implements OnInit {
 
   userList: string[];
 
-  constructor() {
+  constructor(private authService: AuthServiceService) {
     this.userList = ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lebsack"]
   }
 
   ngOnInit() {
+  }
+
+  checkIfLoggedIn() {
+    return this.authService.checkIfLoggedIn();
   }
 
   // Add a user name in the first position of list
