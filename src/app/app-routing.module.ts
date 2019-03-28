@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'user/:username', component: SingleUserComponent },
   { path: '**', component: PageNotFoundComponent },
-  { path: 'user/:username', component: SingleUserComponent }
 ];
 
 @NgModule({

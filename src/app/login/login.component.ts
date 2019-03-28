@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   @Input() loggedUser: string = '';
 
-  constructor(private authService: AuthServiceService) { }
+  constructor(private authService: AuthServiceService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.loggedUser);
     this.loggedUser = '';
-    //redirect to dashboard
+    this.router.navigate(['/dashboard'])
   }
 
   logout() {

@@ -4,6 +4,7 @@ care of the button for toggling color.
 */
 
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -15,7 +16,8 @@ export class UserListComponent implements OnInit {
   @Input() users: string[];
   toggle: boolean = false;
   
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -31,5 +33,9 @@ export class UserListComponent implements OnInit {
       return "pink";
     }
     return "lightgreen";
+  }
+
+  navigate(user) {
+    this.router.navigate(['/user', user]);
   }
 }
