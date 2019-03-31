@@ -35,6 +35,7 @@ export class UserListComponent implements OnInit {
     return "lightgreen";
   }
 
+  // Routes the user to the single user subpage
   navigate(user) {
     this.router.navigate(['/user', user]);
   }

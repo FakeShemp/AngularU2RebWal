@@ -11,6 +11,7 @@ import { AuthServiceService } from '../auth-service.service'
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
 
   userList: string[];
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Check if user is logged in via authService
   checkIfLoggedIn() {
     return this.authService.checkIfLoggedIn();
   }

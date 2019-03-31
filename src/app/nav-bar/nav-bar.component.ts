@@ -1,3 +1,5 @@
+/* Navigation component used on all pages */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
+
 export class NavBarComponent implements OnInit {
 
   constructor() { }

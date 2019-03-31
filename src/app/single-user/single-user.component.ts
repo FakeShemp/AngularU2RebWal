@@ -1,3 +1,5 @@
+/* Displays the name of a single user */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -6,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './single-user.component.html',
   styleUrls: ['./single-user.component.css']
 })
+
 export class SingleUserComponent implements OnInit {
 
   user: string;

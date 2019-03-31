@@ -9,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   templateUrl: './edit-users.component.html',
   styleUrls: ['./edit-users.component.css']
 })
+
 export class EditUsersComponent implements OnInit {
 
   @Output() addUserEvent = new EventEmitter<string>();

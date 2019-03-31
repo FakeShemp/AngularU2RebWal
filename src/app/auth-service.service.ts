@@ -1,9 +1,12 @@
+/* Service that handles authentication (login/logout) */
+
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthServiceService {
 
   loggedUser: string;
@@ -12,6 +15,7 @@ export class AuthServiceService {
     this.loggedUser = undefined;
   }
 
+  // Checks localStorage for user login info, returns result
   checkIfLoggedIn(): boolean {
     if (localStorage.getItem('user')) {
       return true;
@@ -19,11 +23,13 @@ export class AuthServiceService {
     return false;
   }
 
+  // Store user login info
   public login(user): void {
     localStorage.setItem('user', user);
     this.loggedUser = user;
   }
 
+  // Clear user login info
   public logout(): void {
     localStorage.clear();
     this.loggedUser = undefined;
